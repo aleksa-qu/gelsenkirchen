@@ -6,10 +6,7 @@ export class StartPage extends MainPage {
   readonly url: string = SERVICE_URL;
   readonly categories: Locator;
   readonly discoverAllCategories: Locator;
-  readonly cathegory1: Locator;
-  readonly cathegory2: Locator;
-  readonly cathegory3: Locator;
-  readonly cathegory4: Locator;
+  readonly cathegoriesSP: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -17,10 +14,7 @@ export class StartPage extends MainPage {
     this.discoverAllCategories = page.getByRole('link', {
       name: 'Discover all categories All',
     });
-    this.cathegory1 = page.getByRole('link');
-    this.cathegory2 = page.getByRole('link');
-    this.cathegory3 = page.getByRole('link');
-    this.cathegory4 = page.getByRole('link');
+    this.cathegoriesSP = page.getByRole('link');
   }
 
   async open() {

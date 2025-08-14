@@ -40,6 +40,14 @@ test('all items on the start page are visible', async ({ page }) => {
     .toHaveText('Copyright © 2025 Libersave GmbH. All rights reserved.');
   await expect.soft(homePage.impressum).toBeVisible();
   await expect.soft(homePage.impressum).toHaveText('Impressum');
+  await expect.soft(homePage.cathegoriesSP).toHaveCount(9); //supposed to be 4 per page but is counting everything with "link"
+});
+
+test('by clicking on Discover all categories opens Categories page', async ({
+  page,
+}) => {
+  await homePage.discoverAllCategories.click();
+  await expect.soft(page).toHaveURL(/.*\/categories/);
 });
 
 test('chose category and rating on the merchants page and reset it', async ({
